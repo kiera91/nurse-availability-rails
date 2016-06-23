@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Full name:</strong>
+  <%= @nurse.full_name %>
+</p>
+
+<p>
+  <strong>Email address:</strong>
+  <%= @nurse.email_address %>
+</p>
+
+<p>
+  <strong>Phone number:</strong>
+  <%= @nurse.phone_number %>
+</p>
+
+<p>
+  <strong>Authorized:</strong>
+  <%= @nurse.authorized %>
+</p>
+
+<%= link_to 'Edit', edit_nurse_path(@nurse) %> |
+<%= link_to 'Back', nurses_path %>
