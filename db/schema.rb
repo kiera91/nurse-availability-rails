@@ -11,16 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160526092333) do
+ActiveRecord::Schema.define(version: 20160815204252) do
+
+  create_table "events", force: :cascade do |t|
+    t.integer  "nurse_id"
+    t.integer  "nurse"
+    t.integer  "event_id"
+    t.datetime "date"
+    t.boolean  "confirmed"
+    t.string   "shift"
+  end
 
   create_table "nurses", force: :cascade do |t|
     t.string   "full_name"
     t.string   "email_address"
     t.string   "phone_number"
     t.boolean  "authorized"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
     t.string   "password_digest"
+    t.string   "api_authtoken"
+    t.datetime "authtoken_expiry"
   end
 
 end
